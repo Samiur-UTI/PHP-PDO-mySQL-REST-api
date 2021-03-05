@@ -1,4 +1,5 @@
 <?php include_once "read.php" ?>
+<?php include_once "update.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,17 +23,28 @@
 		  </div>
 		  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 		</form>
-		<div class="card" style="width: 18rem;">
-		  <div class="card-header">
-		    <strong>First Name</strong>
-		  </div>
-		  <ul class="list-group list-group-flush">
-		  		<?php foreach ($row as $item) { ?>
-					<li class="list-group-item"><?php echo $item->first_name ;?></li>
-			
-	    		<?php } ?>
-		  </ul>
-		</div>
+		<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col">ID</th>
+			      <th scope="col">First Name</th>
+			      <th scope="col">Last Name</th>
+			      <th scope="col">Edit</th>
+			      <th scope="col">Delete</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				 <?php foreach ($row as $item) { ?>
+				    <tr>
+				      <th scope="row"><?php echo $item->id ;?></th>
+				      <td><?php echo $item->first_name ;?></td>
+				      <td><?php echo $item->last_name ;?></td>
+				      <td><a class="btn btn-warning" href="update.php" role="button">Update</a></td>
+				      <td><a class="btn btn-danger" href="delete.php" role="button">Delete</a></td>
+				    </tr>
+				 <?php } ?>
+			  </tbody>
+		</table>
 	
 	</div>
 
@@ -40,3 +52,4 @@
 
 </body>
 </html>
+	    		
