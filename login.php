@@ -1,5 +1,4 @@
 <?php include_once "read.php" ?>
-<?php include_once "update.php" ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +38,9 @@
 				      <th scope="row"><?php echo $item->id ;?></th>
 				      <td><?php echo $item->first_name ;?></td>
 				      <td><?php echo $item->last_name ;?></td>
-				      <td><a class="btn btn-warning" href="update.php" role="button">Update</a></td>
+				      <td>
+					   	<a class="btn btn-warning" href="update.php?id=<?php echo $item->id; ?>">Update</a>
+				  	  </td>
 				      <td><a class="btn btn-danger" href="delete.php" role="button">Delete</a></td>
 				    </tr>
 				 <?php } ?>
